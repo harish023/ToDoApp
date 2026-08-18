@@ -1,4 +1,7 @@
 
+using Todo.API;
+using Swashbuckle.AspNetCore.SwaggerGen;
+
 namespace TodoServer
 {
     public class Program
@@ -12,6 +15,9 @@ namespace TodoServer
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
+
+            builder.Services.AddInfrastructure(builder.Configuration);
+
             builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
